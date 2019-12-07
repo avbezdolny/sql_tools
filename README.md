@@ -1,4 +1,4 @@
-![logo](sql.png)  
+![logo](sql_python.png)  
 
 # SQL Tools 🚀
 
