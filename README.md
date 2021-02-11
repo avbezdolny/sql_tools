@@ -8,6 +8,6 @@ GUI на Python + Tkinter/PySide для SQL-запросов к базам да�
 
 `pip install --upgrade pyside6`
 
-`pip install --upgrade cx_Oracle`
-
 `pip install --upgrade pyodbc`
+
+`pip install --upgrade cx_Oracle`
