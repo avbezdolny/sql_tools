@@ -98,7 +98,7 @@ class SQLWidget(QtWidgets.QWidget):
         self.gboxSQL = QtWidgets.QGroupBox("SQL-запрос | :cr для курсора")
         self.gboxSQL.setStyleSheet('QGroupBox {color: "#757575"; font-family: sans-serif; font-size: 12px;}')
         
-        self.textSQL = QtWidgets.QTextEdit("select count(*) from sys.dm_exec_connections \n --select * from block")
+        self.textSQL = QtWidgets.QTextEdit("select count(*) from sys.dm_exec_connections")
         self.textSQL.setStyleSheet('QTextEdit {color: "#1565c0"; font-family: "Consolas", "Courier New", monospace; font-size: 16px;}')
         
         self.buttonSQL = QtWidgets.QPushButton('Выполнить запрос')
