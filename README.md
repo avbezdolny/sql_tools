@@ -2,9 +2,11 @@
 
 # SQL Tools 🚀
 
-GUI на Python + Tkinter для SQL-запросов к базам данных, на примере Oracle (cx_Oracle) и MS SQL Server (pyodbc)!
+GUI на Python + Tkinter/PySide для SQL-запросов к базам данных, на примере MS SQL Server (pyodbc), Oracle (cx_Oracle) и SQLite (sqlite3)!
 
 Установите необходимые модули python:
+
+`pip install --upgrade pyside6`
 
 `pip install --upgrade cx_Oracle`
 
