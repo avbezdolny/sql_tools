@@ -98,7 +98,7 @@ class SQLWidget(QtWidgets.QWidget):
         self.gboxSQL = QtWidgets.QGroupBox("SQL-запрос | :cr для курсора")
         self.gboxSQL.setStyleSheet('QGroupBox {color: "#757575"; font-family: sans-serif; font-size: 12px;}')
         
-        self.textSQL = QtWidgets.QTextEdit("select count(*) from sys.dm_exec_connections")
+        self.textSQL = QtWidgets.QTextEdit("select count(*) from sys.dm_exec_connections \n --select * from block")
         self.textSQL.setStyleSheet('QTextEdit {color: "#1565c0"; font-family: "Consolas", "Courier New", monospace; font-size: 16px;}')
         
         self.buttonSQL = QtWidgets.QPushButton('Выполнить запрос')
@@ -130,14 +130,16 @@ class SQLWidget(QtWidgets.QWidget):
         self.statusLabel.setStyleSheet('QLabel {color: "#757575"; font-family: sans-serif; font-size: 12px;}')
         self.statusLabel.setAlignment(QtCore.Qt.AlignRight)
         
+        self.splitter =  QtWidgets.QSplitter()
+        self.splitter.addWidget(self.gboxSQL)
+        self.splitter.addWidget(self.gboxCSV)
+        self.splitter.setOrientation(QtCore.Qt.Vertical)
+        self.splitter.setHandleWidth(5)
+        
         self.layout = QtWidgets.QVBoxLayout()
-        self.layout.addWidget(self.gboxSQL)
-        self.layout.addWidget(self.gboxCSV)
+        self.layout.addWidget(self.splitter)
         self.layout.addWidget(self.statusLabel)
-        self.layout.insertSpacing(1, 25)
-        self.layout.insertSpacing(3, 5)
-        self.layout.setStretchFactor(self.gboxSQL, 1)
-        self.layout.setStretchFactor(self.gboxCSV, 1)
+        self.layout.insertSpacing(1, 5)
         self.setLayout(self.layout)
         
         self.buttonSQL.clicked.connect(self.execSQL)
